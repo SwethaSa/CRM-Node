@@ -59,7 +59,7 @@ app.post("/forgot-password", async (req, res) => {
       expiresIn: "1h",
     });
 
-    const resetURL = `http://localhost:3000/reset-password/${resetToken}`;
+    const resetURL = `https://funny-selkie-a56f6b.netlify.app/reset-password/${resetToken}`;
 
     const mailOptions = {
       from: "CRM@gmail.com",
