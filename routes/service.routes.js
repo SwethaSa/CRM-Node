@@ -43,7 +43,7 @@ const users = await client.db("CRM").collection("users").find({
       secure: false,
       auth: {
         user: "digivantetesing@gmail.com",
-        pass: "bpbfvjtteuwaqxwe",
+        pass: "chabkknqjcouolfc",
       },
     });
     const mailOptions = {

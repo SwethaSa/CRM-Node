@@ -1,32 +1,4 @@
-// import express from "express";
-// import { client } from "../index.js";
 
-// const router = express.Router();
-
-// router.post("/", async (req, res) => {
-//   try {
-//     const { name, email, phone, city, state, status } = req.body;
-//     // Check if email already exists
-//     const existingUser = await client
-//       .db("CRM")
-//       .collection("lead")
-//       .findOne({ email });
-//     if (existingUser) {
-//       return res.status(400).json({ msg: "OOPS!!👀Email already exists" });
-//     }
-
-//     const user = await client.db("CRM").collection("lead").insertOne({
-//       name,
-//       email,
-//       phone,
-//       city, state,
-//       status,
-//     });
-//     return res.status(201).json({ msg: "Lead created Successfully😍👍" });
-//   } catch (err) {
-//     return res.status(500).json({ error: err.message });
-//   }
-// });
 
 
 import express from "express";
@@ -75,7 +47,7 @@ router.post("/", async (req, res) => {
         secure: false,
         auth: {
           user: "digivantetesing@gmail.com",
-          pass: "bpbfvjtteuwaqxwe",
+          pass: "chabkknqjcouolfc",
         },
       });
       const mailOptions = {

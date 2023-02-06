@@ -32,7 +32,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "digivantetesing@gmail.com",
-    pass: "bpbfvjtteuwaqxwe",
+    pass: "chabkknqjcouolfc",
   },
 });
 
