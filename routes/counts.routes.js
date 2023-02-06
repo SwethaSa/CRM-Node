@@ -15,17 +15,17 @@ const router = express.Router();
 
 router.get('/counts', async (req, res) => {
     try {
-      const leadResponse = await axios.get('http://localhost:100/leads');
+      const leadResponse = await axios.get('https://crm-node-ldfqg13sv-swethasa.vercel.app/leads');
       console.log(leadResponse.data);
       const leadCount = leadResponse.data.length;
       console.log(leadCount);
       
-      const contactResponse = await axios.get('http://localhost:100/contacts');
+      const contactResponse = await axios.get('https://crm-node-ldfqg13sv-swethasa.vercel.app/contacts');
       console.log(contactResponse.data);
       const contactCount = contactResponse.data.length;
       console.log(contactCount);
 
-      const serviceRequestResponse = await axios.get('http://localhost:100/service-request');
+      const serviceRequestResponse = await axios.get('https://crm-node-ldfqg13sv-swethasa.vercel.app/service-request');
       console.log(serviceRequestResponse.data);
       const serviceCount = serviceRequestResponse.data.length;
       console.log(serviceCount);
