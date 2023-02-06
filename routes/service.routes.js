@@ -76,6 +76,34 @@ router.get("/", async (request, response) => {
     response.send(service);
   });
 
+
+
+  
+  router.put("/:email", async (req, res) => {
+    try {
+      const { name, phone, description, status } = req.body;
+      // Check if email exists
+      const existingUser = await client
+        .db("CRM")
+        .collection("service")
+        .findOne({ email: req.params.email });
+      if (!existingUser) {
+        return res.status(404).json({ msg: "Service request not found" });
+      }
+  
+      await client
+        .db("CRM")
+        .collection("service")
+        .updateOne(
+          { email: req.params.email },
+          { $set: { name, phone, description, status } }
+        );
+      return res.status(200).json({ msg: "Service request updated successfully😍👍" });
+    } catch (err) {
+      return res.status(500).json({ error: err.message });
+    }
+  });
+
   router.delete("/:email", async (req, res) => {
     try {
       const deletedLead = await client
