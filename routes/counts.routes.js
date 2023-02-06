@@ -8,24 +8,24 @@ import axios from 'axios';
 
 const router = express.Router();
 
-const APILEADS = process.env.APILEADS;
-const APICONTACTS = process.env.APICONTACTS;
-const APISERVICE = process.env.APISERVICE;
+// const APILEADS = process.env.APILEADS;
+// const APICONTACTS = process.env.APICONTACTS;
+// const APISERVICE = process.env.APISERVICE;
 
 
 router.get('/counts', async (req, res) => {
     try {
-      const leadResponse = await axios.get(APILEADS);
+      const leadResponse = await axios.get('http://localhost:100/leads');
       console.log(leadResponse.data);
       const leadCount = leadResponse.data.length;
       console.log(leadCount);
       
-      const contactResponse = await axios.get(APICONTACTS);
+      const contactResponse = await axios.get('http://localhost:100/contacts');
       console.log(contactResponse.data);
       const contactCount = contactResponse.data.length;
       console.log(contactCount);
 
-      const serviceRequestResponse = await axios.get(APISERVICE);
+      const serviceRequestResponse = await axios.get('http://localhost:100/service-request');
       console.log(serviceRequestResponse.data);
       const serviceCount = serviceRequestResponse.data.length;
       console.log(serviceCount);
