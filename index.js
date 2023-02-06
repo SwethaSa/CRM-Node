@@ -44,8 +44,6 @@ app.use("/users", userRouter);
 app.use("/leads", leadsRouter);
 app.use("/contacts", contactsRouter);
 app.use("/service-request", serviceRouter);
-
-
 app.use("/api", countsRouter);
 
 
