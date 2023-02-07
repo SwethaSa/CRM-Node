@@ -37,7 +37,40 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get("/", function (request, response) {
-  response.send("🙋‍♂️, 🌏 🎊✨🤩");
+  response.send(`
+    <style>
+    body{
+      background-color: gold;
+
+    }
+      h1 {
+        font-family: sans-serif;
+        color: black;
+        text-align: center;
+        text-shadow: 0 0 5px black;
+        box-shadow: 2px 2px 50px black;
+        padding: 20px;
+        margin-top:4cm;
+      }
+      p{
+        color:black;
+        text-align: center;
+        text-shadow: 0 0 5px black;
+        font-family: sans-serif;
+        font-size:1cm;
+        font-weight:900;
+        margin-top:2cm;
+
+      }
+    </style>
+    <p>CRM App EndPoints</p>
+    <h1>
+      Leads Data - <a href="https://crm-node-delta.vercel.app/leads" style="color: #0000FF; text-shadow:none">https://crm-node-delta.vercel.app/leads</a><br><br>
+      Contacts Data - <a href="https://crm-node-delta.vercel.app/contacts" style="color: #0000FF; text-shadow:none">https://crm-node-delta.vercel.app/contacts</a><br><br>
+      Service Request Data - <a href="https://crm-node-delta.vercel.app/service-request" style="color: #0000FF; text-shadow:none">https://crm-node-delta.vercel.app/service-request</a><br><br>
+      Count of All DB - <a href="https://crm-node-delta.vercel.app/api/counts" style="color: #0000FF; text-shadow:none">https://crm-node-delta.vercel.app/api/counts</a>
+    </h1>
+  `);
 });
 
 app.use("/users", userRouter);
